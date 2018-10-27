@@ -1,0 +1,66 @@
+accessControl:
+  enabled: false
+api:
+  allowCrossOrigin: true
+  key: 
+feature:
+  sdSupport: false
+plugins:
+  announcements:
+    _config_version: 1
+    channels:
+      _blog:
+        read_until: 1538240400
+      _important:
+        read_until: 1521111600
+      _octopi:
+        read_until: 1527588900
+      _plugins:
+        read_until: 1538611200
+      _releases:
+        read_until: 1532527200
+  cura:
+    cura_engine: /usr/local/bin/cura_engine
+  discovery:
+    publicPort: 80
+    upnpUuid: 
+  softwareupdate:
+    _config_version: 6
+    check_providers:
+    checks:
+      octoprint:
+        checkout_folder: /home/pi/OctoPrint
+        prerelease: true
+        prerelease_channel: rc/maintenance
+printerProfiles:
+  default: _default
+server:
+  commands:
+    serverRestartCommand: sudo service octoprint restart
+    systemRestartCommand: sudo shutdown -r now
+    systemShutdownCommand: sudo shutdown -h now
+  firstRun: false
+  onlineCheck:
+    enabled: false
+  pluginBlacklist:
+    enabled: true
+  secretKey: 
+  seenWizards:
+    cura: null
+temperature:
+  profiles:
+  - bed: 100
+    extruder: 210
+    name: ABS
+  - bed: 60
+    extruder: 190
+    name: PLA
+webcam:
+  ffmpeg: /usr/bin/avconv
+  snapshot: http://127.0.0.1:8080/?action=snapshot
+  stream: /webcam/?action=stream
+  timelapse:
+    fps: 25
+    options: {}
+    postRoll: 2
+    type: 'off'

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/bulma.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <section class="hero is-primary">
+      <div class="hero-head">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title is-1"><%= title%>&nbsp;<span style="font-style: italic; font-size: smaller">v<%= version %></span></h1>
+            <h2 class="subtitle">Easily recreate an initial OctoPrint config.yaml file if yours has become corrupted</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>&nbsp;</section>
+    <!--div id="sectionNew" class="box cta"><p class="has-text-centered"><span class="tag is-primary">New</span> octopi-config-yaml now supports your own app key!</p></div-->
+    <section id="sectionEdit" class="section">
+      <div class="rows">
+        <div class="row">
+          <div>1. This program will generate a replacement <b>config.yaml</b> file for OctoPrint which can be used to replace a damaged one.
+            <!--You can find your earlier-used key in your existing <code>~/.octoprint/config.yaml</code> file in its <code>api:</code> section.
+            Copy it from that file and enter it here. Or leave this field empty to issue a new one.--><br/><br/></div>
+          <div>2. It's a good idea to rename your existing <b>config.yaml</b> file in place so as not to lose it. You could always go back and
+            refer to it later. <i>In a remote session to your Raspberry:</i> <br/><code>mv ~/.octoprint/config.yaml ~/.octoprint/config.save</code><br/><br/></div>
+          <div>3. Once generated and saved to <code>~/Downloads/config.yaml</code> on your workstation, use scp to copy this file to your Raspberry Pi. <i>On your workstation:</i> <code>scp ~/Downloads/config.yaml pi@octopi.local:~/.octoprint/config.yaml</code><br/><br/></div>
+          <div>4. You would then need to restart your Raspberry Pi to see the changes.<br/><br/></div>
+        </div>
+        <div class="row">
+          <!--div class="columns">
+            <div class="column">
+              <label class="label" for="apiKey">API Key:</label>
+              <div class="field">
+                <div class="control">
+                  <div class="input is-large">
+                    <input id="apiKey" class="input" value="" maxlength="32" size="32">
+                  </div>
+                </div>
+              </div>
+            </div-->
+            <div class="column">
+              <div class="field">
+                <div class="control">
+                  <p>&nbsp;</p>
+                  <button class="button is-primary is-large" id="save-button" onclick='window.open("/config.yaml", "_blank");'>Download</button>
+                  <p>&nbsp;</p>
+                </div>
+              </div>
+            </div><!-- column -->
+          </div><!--   columns -->
+        </div><!--     row -->
+      </div><!--       rows -->
+    </section>
+  </body>
+</html>
